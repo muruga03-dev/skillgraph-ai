@@ -13,6 +13,7 @@
 
 import axios from "axios";
 import { io } from "socket.io-client";
+import Assistant from "../pages/Assistant";
 
 // ─── Base URLs (env-driven) ───────────────────────────────────────────────────
 const API_BASE = process.env.REACT_APP_API_URL || "";
@@ -50,8 +51,8 @@ export const authAPI = {
   community:      p  => api.get("/auth/community", { params: p }),
   follow:        id  => api.post(`/auth/follow/${id}`),
   addCert:        d  => api.post("/auth/certificate", d),
-  googleURL:  () => `${API_BASE}/api/auth/google`,
-  linkedinURL:() => `${API_BASE}/api/auth/linkedin`,
+  googleURL: () => `${process.env.REACT_APP_API_URL || "http://localhost:5000"}/api/auth/google`,
+  linkedinURL:() => `${process.env.REACT_APP_API_URL || "http://localhost:5000"}/api/auth/linkedin`,
 };
 
 // ─── Analysis API ─────────────────────────────────────────────────────────────
@@ -81,6 +82,7 @@ export const analysisAPI = {
   studyPlan:    (s, h, d)  => api.post("/analysis/study-plan", { skills: s, hours_per_day: h, days_per_week: d }),
   trends:       ()         => api.get("/analysis/career/trends"),
   readiness:    s          => api.post("/analysis/interview/readiness", { skills: s }),
+  Assistant:      (system, messages) => api.post("/analysis/assistant", { system, messages }),
 };
 
 // ─── Community API ────────────────────────────────────────────────────────────

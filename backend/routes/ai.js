@@ -1,44 +1,49 @@
 const express = require("express");
-const axios = require("axios");
-
 const router = express.Router();
+const fetch = require("node-fetch");
 
 router.post("/chat", async (req, res) => {
+
   try {
+
     const { system, messages } = req.body;
 
-    const response = await axios.post(
+    const response = await fetch(
       "https://openrouter.ai/api/v1/chat/completions",
       {
-        model: "openai/gpt-3.5-turbo",
-        messages: [
-          { role: "system", content: system },
-          ...messages
-        ]
-      },
-      {
+        method: "POST",
         headers: {
-          Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
-          "Content-Type": "application/json"
-        }
+          "Authorization": `Bearer ${process.env.OPENROUTER_API_KEY}`,
+          "Content-Type": "application/json",
+          "HTTP-Referer": "https://skillgraph-ai.vercel.app",
+          "X-Title": "SkillGraph AI"
+        },
+        body: JSON.stringify({
+          model: "openai/gpt-4o-mini",
+          messages: [
+            { role: "system", content: system },
+            ...messages
+          ]
+        })
       }
     );
 
-    const reply = response.data.choices[0].message.content;
+    const data = await response.json();
 
     res.json({
-      success: true,
-      reply
+      reply: data.choices?.[0]?.message?.content || "No response"
     });
 
-  } catch (error) {
-    console.error("AI Error:", error.response?.data || error.message);
+  } catch (err) {
+
+    console.error(err);
 
     res.status(500).json({
-      success: false,
-      message: "AI request failed"
+      error: "AI request failed"
     });
+
   }
+
 });
 
 module.exports = router;

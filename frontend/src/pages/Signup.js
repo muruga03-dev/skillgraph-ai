@@ -75,7 +75,7 @@ export default function Signup() {
           <p style={{ color: "#4a6280", marginBottom: "2rem", fontSize: ".88rem" }}>Start your AI-powered career journey</p>
 
           {/* OAuth buttons */}
-          <a href="http://localhost:5000/api/auth/google" className="oauth-btn" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: ".7rem", width: "100%", padding: ".85rem", borderRadius: 12, background: "#ffffff", color: "#1a1a1a", textDecoration: "none", fontWeight: 700, fontSize: ".9rem", marginBottom: ".7rem", boxShadow: "0 2px 12px rgba(0,0,0,.25)" }}>
+          <a href={authAPI.googleURL()} className="oauth-btn" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: ".7rem", width: "100%", padding: ".85rem", borderRadius: 12, background: "#ffffff", color: "#1a1a1a", textDecoration: "none", fontWeight: 700, fontSize: ".9rem", marginBottom: ".7rem", boxShadow: "0 2px 12px rgba(0,0,0,.25)" }}>
             <svg width="20" height="20" viewBox="0 0 24 24">
               <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
               <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -85,13 +85,12 @@ export default function Signup() {
             Sign up with Google
           </a>
 
-          <a href="http://localhost:5000/api/auth/linkedin" className="oauth-btn" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: ".7rem", width: "100%", padding: ".85rem", borderRadius: 12, background: "#0077B5", color: "#fff", textDecoration: "none", fontWeight: 700, fontSize: ".9rem", marginBottom: "1.5rem", boxShadow: "0 4px 16px rgba(0,119,181,.35)" }}>
+          <a href={authAPI.linkedinURL()} className="oauth-btn" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: ".7rem", width: "100%", padding: ".85rem", borderRadius: 12, background: "#0077B5", color: "#fff", textDecoration: "none", fontWeight: 700, fontSize: ".9rem", marginBottom: "1.5rem", boxShadow: "0 4px 16px rgba(0,119,181,.35)" }}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
             </svg>
             Sign up with LinkedIn
           </a>
-
           <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.5rem" }}>
             <div style={{ flex: 1, height: 1, background: "rgba(23,36,66,1)" }} />
             <span style={{ color: "#3a5275", fontSize: ".78rem" }}>or sign up with email</span>
@@ -105,7 +104,7 @@ export default function Signup() {
           )}
 
           <form onSubmit={handleSubmit}>
-            {[["name","Full Name","text","Priya Sharma"],["email","Email","email","priya@gmail.com"],["password","Password","password","At least 6 characters"]].map(([key,label,type,ph]) => (
+            {[["name","Full Name","text","your Name"],["email","Email","email","Your@gmail.com"],["password","Password","password","At least 6 characters"]].map(([key,label,type,ph]) => (
               <div key={key} style={{ marginBottom: "1rem" }}>
                 <label style={{ display: "block", color: "#4a6280", fontSize: ".8rem", fontWeight: 600, marginBottom: ".4rem" }}>{label}</label>
                 <input type={type} value={form[key]} onChange={e => setForm({ ...form, [key]: e.target.value })} placeholder={ph} className="sg-input-s" required />
