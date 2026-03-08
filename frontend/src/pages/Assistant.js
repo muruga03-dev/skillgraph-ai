@@ -26,6 +26,7 @@ Mention Indian companies like TCS, Infosys, Flipkart, Razorpay when relevant.
 Mention salary in ₹ INR and USD.`;
 
 export default function Assistant() {
+
   const { user } = useAuth();
 
   const [messages, setMessages] = useState([
@@ -46,6 +47,7 @@ export default function Assistant() {
   }, [messages]);
 
   const send = async (text) => {
+
     const msg = text || input.trim();
     if (!msg || loading) return;
 
@@ -56,46 +58,63 @@ export default function Assistant() {
     setMessages(newMessages);
     setLoading(true);
 
-     try {
+    try {
 
-    const response = await fetch(
-      "https://skillgraph-backend.onrender.com/api/ai/chat",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          system: SYSTEM_PROMPT,
-          messages: newMessages
-        })
+      const response = await fetch(
+        "https://skillgraph-backend.onrender.com/api/ai/chat",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            system: SYSTEM_PROMPT,
+            messages: newMessages
+          })
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Server error");
       }
-    );
 
-    // Check response status
-    if (!response.ok) {
-      const errText = await response.text();
-      throw new Error(`Server error: ${errText}`);
+      const data = await response.json();
+
+      const reply =
+        data.reply ||
+        data.message ||
+        data.choices?.[0]?.message?.content ||
+        "⚠️ AI returned empty response";
+
+      setMessages([
+        ...newMessages,
+        { role: "assistant", content: reply }
+      ]);
+
+    } catch (err) {
+
+      console.error(err);
+
+      setError("⚠️ AI request failed");
+
+      setMessages([
+        ...newMessages,
+        {
+          role: "assistant",
+          content: "⚠️ AI request failed. Please try again."
+        }
+      ]);
+
+    } finally {
+
+      setLoading(false);
+
     }
-
-    const data = await response.json();
-
-    return data;
-
-  } catch (error) {
-
-    console.error("AI request failed:", error);
-
-    return {
-      error: true,
-      message: "⚠️ AI request failed. Please try again."
-    };
-
-  }
-};
+  };
 
   const formatMsg = (text) => {
     return text.split("\n").map((line, i) => {
+
       if (line.startsWith("- ") || line.startsWith("• "))
         return (
           <p key={i} style={{ margin: "0 0 .2rem", paddingLeft: "1rem" }}>
@@ -110,31 +129,28 @@ export default function Assistant() {
   };
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        background: "var(--bg)",
-        color: "var(--text)",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
+    <div style={{
+      minHeight: "100vh",
+      background: "var(--bg)",
+      color: "var(--text)",
+      display: "flex",
+      flexDirection: "column"
+    }}>
+
       <Sidebar />
 
-      <div
-        style={{
-          maxWidth: 800,
-          width: "100%",
-          margin: "0 auto",
-          padding: "1.5rem",
-          flex: 1,
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
+      <div style={{
+        maxWidth: 800,
+        width: "100%",
+        margin: "0 auto",
+        padding: "1.5rem",
+        flex: 1,
+        display: "flex",
+        flexDirection: "column"
+      }}>
+
         <h1 className="sg-section-title">🤖 AI Career Assistant</h1>
 
-        {/* Starter Questions */}
         {messages.length <= 1 && (
           <div style={{ display: "flex", flexWrap: "wrap", gap: ".4rem" }}>
             {STARTERS.map((s) => (
@@ -147,7 +163,7 @@ export default function Assistant() {
                   borderRadius: 20,
                   padding: ".35rem .8rem",
                   fontSize: ".78rem",
-                  cursor: "pointer",
+                  cursor: "pointer"
                 }}
               >
                 {s}
@@ -156,34 +172,26 @@ export default function Assistant() {
           </div>
         )}
 
-        {/* Chat Window */}
-        <div
-          style={{
-            flex: 1,
-            overflowY: "auto",
-            marginTop: "1rem",
-            marginBottom: "1rem",
-          }}
-        >
+        <div style={{
+          flex: 1,
+          overflowY: "auto",
+          marginTop: "1rem",
+          marginBottom: "1rem"
+        }}>
+
           {messages.map((m, i) => (
-            <div
-              key={i}
-              style={{
-                display: "flex",
-                justifyContent: m.role === "user" ? "flex-end" : "flex-start",
-                marginBottom: "1rem",
-              }}
-            >
-              <div
-                style={{
-                  background:
-                    m.role === "user" ? "var(--blue)" : "var(--bg3)",
-                  color: m.role === "user" ? "#fff" : "var(--text)",
-                  padding: ".6rem 1rem",
-                  borderRadius: 12,
-                  maxWidth: "80%",
-                }}
-              >
+            <div key={i} style={{
+              display: "flex",
+              justifyContent: m.role === "user" ? "flex-end" : "flex-start",
+              marginBottom: "1rem"
+            }}>
+              <div style={{
+                background: m.role === "user" ? "var(--blue)" : "var(--bg3)",
+                color: m.role === "user" ? "#fff" : "var(--text)",
+                padding: ".6rem 1rem",
+                borderRadius: 12,
+                maxWidth: "80%"
+              }}>
                 {m.role === "assistant"
                   ? formatMsg(m.content)
                   : m.content}
@@ -192,15 +200,12 @@ export default function Assistant() {
           ))}
 
           {loading && <p>🤖 Thinking...</p>}
-
-          {error && (
-            <p style={{ color: "red", fontSize: ".85rem" }}>{error}</p>
-          )}
+          {error && <p style={{ color: "red" }}>{error}</p>}
 
           <div ref={bottomRef} />
+
         </div>
 
-        {/* Input */}
         <div style={{ display: "flex", gap: ".6rem" }}>
           <input
             value={input}
@@ -213,7 +218,7 @@ export default function Assistant() {
               borderRadius: 10,
               border: "1px solid var(--border)",
               background: "var(--bg2)",
-              color: "var(--text)",
+              color: "var(--text)"
             }}
           />
 
@@ -225,6 +230,7 @@ export default function Assistant() {
             Send →
           </button>
         </div>
+
       </div>
     </div>
   );
