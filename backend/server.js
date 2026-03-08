@@ -16,13 +16,27 @@ const Message   = require("./models/Message");
 const app    = express();
 const server = http.createServer(app);
 const io     = new Server(server, {
-  cors: { origin: process.env.CLIENT_URL || "http://localhost:3000", methods: ["GET","POST"] }
+  cors: { origin: (origin, cb) => { if (!origin || (origin && (origin.includes("localhost") || origin.includes(".vercel.app") || origin === process.env.CLIENT_URL))) cb(null, true); else cb(null, true); }, methods: ["GET","POST"], credentials: true }
 });
 
 connectDB();
 
 // ── Middleware ────────────────────────────────────────────────────────────────
-app.use(cors({ origin: ["http://localhost:3000"], credentials: true }));
+const ALLOWED_ORIGINS = [
+  "http://localhost:3000",
+  process.env.CLIENT_URL,
+  process.env.CLIENT_URL?.replace("https://", "http://"),
+].filter(Boolean);
+
+app.use(cors({
+  origin: (origin, cb) => {
+    if (!origin) return cb(null, true);
+    if (ALLOWED_ORIGINS.some(o => origin.startsWith(o))) return cb(null, true);
+    if (origin.includes(".vercel.app")) return cb(null, true);
+    cb(new Error("CORS blocked: " + origin));
+  },
+  credentials: true,
+}));
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 app.use(session({ secret: process.env.SESSION_SECRET || "secret", resave: false, saveUninitialized: false }));
@@ -87,7 +101,7 @@ app.use("/api/auth",      require("./routes/auth"));
 app.use("/api/mentor",    require("./routes/mentor"));
 app.use("/api/analysis",  require("./routes/analysis"));
 app.use("/api/community", require("./routes/community"));
-app.use("/api/ai", require("./routes/ai"));
+app.use("/api/ai",        require("./routes/ai"));
 app.get("/api/health", (req, res) => res.json({ status: "ok", version: "2.0.0", timestamp: new Date().toISOString() }));
 app.use((req, res) => res.status(404).json({ success: false, message: `Not found: ${req.method} ${req.url}` }));
 app.use((err, req, res, next) => res.status(500).json({ success: false, message: err.message }));
@@ -130,6 +144,12 @@ io.on("connection", (socket) => {
 
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
+  // Startup diagnostics — visible in Render logs
+  console.log("\n🌐 CLIENT_URL  :", process.env.CLIENT_URL  || "⚠️  NOT SET");
+  console.log("🤖 ML_SERVICE  :", process.env.ML_SERVICE_URL || "⚠️  NOT SET");
+  console.log("🍃 MONGODB     :", process.env.MONGODB_URI ? "✅ connected" : "⚠️  NOT SET");
+  console.log("🔑 GOOGLE_OAUTH:", process.env.GOOGLE_CLIENT_ID ? "✅ configured" : "❌ NOT SET");
+  console.log("🔑 LINKEDIN    :", process.env.LINKEDIN_CLIENT_ID ? "✅ configured" : "❌ NOT SET");
   console.log(`\n${"═".repeat(55)}`);
   console.log(`  🚀 SkillGraph AI Backend v2.0`);
   console.log(`  🌐 http://localhost:${PORT}`);

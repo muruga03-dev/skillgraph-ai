@@ -1,3 +1,4 @@
+import { apiFetch } from "../services/api";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
@@ -29,9 +30,9 @@ export default function OAuthCallback() {
 
     setStatus("Fetching your profile…");
 
-    // Use RELATIVE path so CRA proxy (localhost:3000 → :5000) handles it
-    fetch("/api/auth/me", {
-      headers: { Authorization: `Bearer ${token}` }
+    // Pass token explicitly in header — localStorage is empty until login() is called
+    apiFetch("/api/auth/me", {
+      headers: { Authorization: `Bearer ${token}` },
     })
       .then(r => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
@@ -39,7 +40,7 @@ export default function OAuthCallback() {
       })
       .then(data => {
         if (data.user) {
-          login(data.user, token);
+          login(data.user, token);   // now save token + user to localStorage
           setStatus("Success! Redirecting…");
           setTimeout(() => navigate("/dashboard"), 600);
         } else {
@@ -58,7 +59,7 @@ export default function OAuthCallback() {
       alignItems:"center", justifyContent:"center", fontFamily:"'Inter',sans-serif" }}>
       <style>{`@keyframes spin{to{transform:rotate(360deg)}}`}</style>
       <div style={{ textAlign:"center", maxWidth:360, padding:"2rem" }}>
-        <img src="/skill.jpg" alt="SkillGraph AI" style={{ width:72, height:72,
+        <img src="/logo.jpeg" alt="SkillGraph AI" style={{ width:72, height:72,
           borderRadius:18, objectFit:"cover", marginBottom:"1.5rem",
           border:"2px solid rgba(61,142,240,.4)", display:"block", margin:"0 auto 1.5rem" }} />
         {error ? (
