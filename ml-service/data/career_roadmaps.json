@@ -1,0 +1,160 @@
+{
+  "Full Stack Developer": {
+    "overview": "Full stack developers build both the frontend (what users see) and backend (server logic, databases). High demand, great salary, versatile career.",
+    "timeline": "8–12 months for job-ready",
+    "phases": [
+      {
+        "month": "Month 1-2",
+        "title": "Web Fundamentals",
+        "skills": ["HTML5", "CSS3", "Git", "JavaScript Basics"],
+        "tasks": ["Build 3 static websites", "Push projects to GitHub", "Learn Flexbox & Grid"],
+        "courses": [
+          {"title": "The Web Developer Bootcamp", "platform": "Udemy", "url": "https://udemy.com", "free": false},
+          {"title": "freeCodeCamp Responsive Web Design", "platform": "freeCodeCamp", "url": "https://freecodecamp.org", "free": true}
+        ],
+        "milestone": "Build a personal portfolio website"
+      },
+      {
+        "month": "Month 3-4",
+        "title": "JavaScript Mastery",
+        "skills": ["ES6+", "DOM Manipulation", "Async/Await", "Fetch API", "TypeScript Basics"],
+        "tasks": ["Build a weather app", "Create a to-do app", "Learn promises and async patterns"],
+        "courses": [
+          {"title": "JavaScript: The Complete Guide", "platform": "Udemy", "url": "https://udemy.com", "free": false},
+          {"title": "javascript.info", "platform": "javascript.info", "url": "https://javascript.info", "free": true}
+        ],
+        "milestone": "Build a full JavaScript project with API integration"
+      },
+      {
+        "month": "Month 5-6",
+        "title": "React Frontend",
+        "skills": ["React", "Redux", "React Router", "Component Design", "Hooks"],
+        "tasks": ["Build a React SPA", "State management with Redux", "Deploy to Vercel/Netlify"],
+        "courses": [
+          {"title": "React – The Complete Guide", "platform": "Udemy", "url": "https://udemy.com", "free": false},
+          {"title": "Official React Docs (react.dev)", "platform": "React", "url": "https://react.dev", "free": true}
+        ],
+        "milestone": "Build a React app with backend integration"
+      },
+      {
+        "month": "Month 7-8",
+        "title": "Node.js Backend",
+        "skills": ["Node.js", "Express", "MongoDB", "REST API", "JWT Auth"],
+        "tasks": ["Build a REST API", "Implement authentication", "Connect MongoDB"],
+        "courses": [
+          {"title": "Node.js – The Complete Guide", "platform": "Udemy", "url": "https://udemy.com", "free": false},
+          {"title": "Node.js Crash Course", "platform": "YouTube/Traversy Media", "url": "https://youtube.com", "free": true}
+        ],
+        "milestone": "Build a full MERN stack app"
+      },
+      {
+        "month": "Month 9-10",
+        "title": "DevOps & Deployment",
+        "skills": ["Docker", "AWS/Render", "CI/CD", "NGINX", "Linux Basics"],
+        "tasks": ["Dockerize your apps", "Deploy to cloud", "Set up CI/CD pipeline"],
+        "courses": [
+          {"title": "Docker & Kubernetes Practical Guide", "platform": "Udemy", "url": "https://udemy.com", "free": false}
+        ],
+        "milestone": "Deploy a production-ready app"
+      },
+      {
+        "month": "Month 11-12",
+        "title": "Job Preparation",
+        "skills": ["DSA", "System Design", "Portfolio", "Resume"],
+        "tasks": ["Solve 50+ LeetCode problems", "Prepare 3 portfolio projects", "Apply to jobs"],
+        "courses": [
+          {"title": "LeetCode Top Interview 150", "platform": "LeetCode", "url": "https://leetcode.com", "free": true},
+          {"title": "Grokking System Design Interview", "platform": "Educative", "url": "https://educative.io", "free": false}
+        ],
+        "milestone": "Land your first job!"
+      }
+    ]
+  },
+  "Data Scientist": {
+    "overview": "Data Scientists extract insights from large datasets, build ML models, and drive business decisions with data. One of the most in-demand roles of the decade.",
+    "timeline": "12–18 months for job-ready",
+    "phases": [
+      {
+        "month": "Month 1-2",
+        "title": "Python & Math Foundations",
+        "skills": ["Python", "NumPy", "Pandas", "Statistics", "Linear Algebra"],
+        "tasks": ["Python basics", "Statistical analysis exercises", "Pandas data manipulation"],
+        "courses": [
+          {"title": "Python for Data Science and AI", "platform": "Coursera/IBM", "url": "https://coursera.org", "free": false},
+          {"title": "Python Tutorial", "platform": "Kaggle (Free)", "url": "https://kaggle.com/learn", "free": true}
+        ],
+        "milestone": "Analyze a real dataset from Kaggle"
+      },
+      {
+        "month": "Month 3-5",
+        "title": "Data Analysis & Visualization",
+        "skills": ["Matplotlib", "Seaborn", "Plotly", "EDA", "SQL", "Jupyter"],
+        "tasks": ["Exploratory data analysis on 5 datasets", "Create visual dashboards", "SQL joins and aggregations"],
+        "courses": [
+          {"title": "Data Analysis with Python", "platform": "freeCodeCamp", "url": "https://freecodecamp.org", "free": true}
+        ],
+        "milestone": "Publish an EDA notebook on Kaggle"
+      },
+      {
+        "month": "Month 6-10",
+        "title": "Machine Learning",
+        "skills": ["Scikit-learn", "Regression", "Classification", "Clustering", "Model Evaluation"],
+        "tasks": ["Build 10 ML models", "Join Kaggle competitions", "Learn cross-validation"],
+        "courses": [
+          {"title": "Machine Learning Specialization (Andrew Ng)", "platform": "Coursera", "url": "https://coursera.org", "free": false},
+          {"title": "Scikit-learn Tutorials", "platform": "scikit-learn.org", "url": "https://scikit-learn.org", "free": true}
+        ],
+        "milestone": "Win or top 50% in a Kaggle competition"
+      },
+      {
+        "month": "Month 11-14",
+        "title": "Deep Learning & NLP",
+        "skills": ["TensorFlow", "PyTorch", "Neural Networks", "NLP", "Computer Vision"],
+        "tasks": ["Train CNNs and RNNs", "Build text classification model", "Fine-tune a transformer"],
+        "courses": [
+          {"title": "Deep Learning Specialization", "platform": "Coursera/deeplearning.ai", "url": "https://deeplearning.ai", "free": false},
+          {"title": "Fast.ai Practical Deep Learning", "platform": "fast.ai", "url": "https://course.fast.ai", "free": true}
+        ],
+        "milestone": "Deploy a deep learning model as an API"
+      },
+      {
+        "month": "Month 15-18",
+        "title": "Job Preparation",
+        "skills": ["Statistics interviews", "Case Studies", "Portfolio", "Communication"],
+        "tasks": ["Prepare 5 case studies", "Build a data portfolio on GitHub", "Practice SQL interviews"],
+        "courses": [
+          {"title": "StrataScratch (SQL & Python Practice)", "platform": "StrataScratch", "url": "https://stratascratch.com", "free": true}
+        ],
+        "milestone": "Land your first Data Science role"
+      }
+    ]
+  },
+  "Machine Learning Engineer": {
+    "overview": "ML Engineers productionize ML models — bridging research and engineering. Combines software engineering skills with deep ML knowledge.",
+    "timeline": "18–24 months for job-ready",
+    "phases": [
+      {"month": "Month 1-3", "title": "Python & Software Engineering", "skills": ["Python", "OOP", "APIs", "Git", "SQL", "Data Structures"], "tasks": ["Master Python OOP", "Build REST APIs", "Practice DSA"], "courses": [{"title": "Python OOP Course", "platform": "Udemy", "url": "https://udemy.com", "free": false}], "milestone": "Build a production-quality Python application"},
+      {"month": "Month 4-9", "title": "Machine Learning Core", "skills": ["Scikit-learn", "Statistics", "Feature Engineering", "Model Evaluation", "Ensemble Methods"], "tasks": ["Complete ML Specialization", "Kaggle top 25%", "Learn MLflow"], "courses": [{"title": "ML Specialization", "platform": "Coursera", "url": "https://coursera.org", "free": false}], "milestone": "Ship a trained ML model to production"},
+      {"month": "Month 10-16", "title": "Deep Learning & LLMs", "skills": ["PyTorch", "TensorFlow", "Transformers", "NLP", "Computer Vision", "LLMs"], "tasks": ["Fine-tune BERT/GPT", "Build vision models", "LangChain projects"], "courses": [{"title": "Deep Learning with PyTorch", "platform": "fast.ai", "url": "https://course.fast.ai", "free": true}], "milestone": "Fine-tune and deploy an LLM application"},
+      {"month": "Month 17-24", "title": "MLOps & Production", "skills": ["Docker", "Kubernetes", "MLflow", "Airflow", "AWS SageMaker", "Monitoring"], "tasks": ["Build MLOps pipeline", "Monitor model drift", "A/B test models"], "courses": [{"title": "MLOps Specialization", "platform": "Coursera/deeplearning.ai", "url": "https://coursera.org", "free": false}], "milestone": "Build end-to-end MLOps platform"}
+    ]
+  },
+  "DevOps Engineer": {
+    "overview": "DevOps Engineers automate software delivery, manage cloud infrastructure, and ensure system reliability. Critical in every tech company.",
+    "timeline": "12–18 months for job-ready",
+    "phases": [
+      {"month": "Month 1-3", "title": "Linux & Networking", "skills": ["Linux", "Bash", "Networking", "Git", "SSH"], "tasks": ["Master Linux CLI", "Write shell scripts", "Understand TCP/IP"], "courses": [{"title": "Linux Command Line Basics", "platform": "Udemy", "url": "https://udemy.com", "free": false}, {"title": "OverTheWire Bandit (Linux)", "platform": "overthewire.org", "url": "https://overthewire.org", "free": true}], "milestone": "Automate server setup with bash scripts"},
+      {"month": "Month 4-7", "title": "Containers & CI/CD", "skills": ["Docker", "CI/CD", "Jenkins", "GitHub Actions", "Docker Compose"], "tasks": ["Dockerize 5 apps", "Build CI/CD pipeline", "Write YAML configs"], "courses": [{"title": "Docker & Kubernetes Guide", "platform": "Udemy", "url": "https://udemy.com", "free": false}], "milestone": "Deploy containerized app with full CI/CD"},
+      {"month": "Month 8-12", "title": "Kubernetes & Cloud", "skills": ["Kubernetes", "AWS", "Terraform", "Helm", "Monitoring"], "tasks": ["Deploy k8s cluster", "Provision AWS with Terraform", "Set up Prometheus/Grafana"], "courses": [{"title": "Certified Kubernetes Admin (CKA)", "platform": "Linux Foundation", "url": "https://training.linuxfoundation.org", "free": false}], "milestone": "Pass AWS Solutions Architect or CKA exam"}
+    ]
+  },
+  "Mobile Developer": {
+    "overview": "Mobile developers build iOS and Android apps. React Native and Flutter allow cross-platform development with one codebase.",
+    "timeline": "10–14 months for job-ready",
+    "phases": [
+      {"month": "Month 1-3", "title": "JavaScript & React Fundamentals", "skills": ["JavaScript", "React", "HTML", "CSS", "Git"], "tasks": ["Build web apps first", "Learn React hooks", "ES6+ mastery"], "courses": [{"title": "React – The Complete Guide", "platform": "Udemy", "url": "https://udemy.com", "free": false}], "milestone": "Deploy a React web app"},
+      {"month": "Month 4-8", "title": "React Native", "skills": ["React Native", "Expo", "Navigation", "Firebase", "REST API", "AsyncStorage"], "tasks": ["Build 3 mobile apps", "Deploy to App Store/Play Store", "Firebase integration"], "courses": [{"title": "React Native – Practical Guide", "platform": "Udemy", "url": "https://udemy.com", "free": false}, {"title": "Expo Docs", "platform": "docs.expo.dev", "url": "https://docs.expo.dev", "free": true}], "milestone": "Ship an app to App Store or Play Store"},
+      {"month": "Month 9-12", "title": "Advanced & Native", "skills": ["Swift (iOS)", "Kotlin (Android)", "Native Modules", "Performance", "Testing"], "tasks": ["Learn native modules", "Performance profiling", "Testing strategies"], "courses": [{"title": "Swift UI Masterclass", "platform": "Udemy", "url": "https://udemy.com", "free": false}], "milestone": "Build a production-grade mobile app"}
+    ]
+  }
+}

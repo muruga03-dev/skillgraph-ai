@@ -1,0 +1,142 @@
+{
+  "challenges": [
+    {
+      "id": "ch001",
+      "title": "Python Basics Blitz",
+      "description": "Complete 10 beginner Python exercises in 3 days",
+      "skill": "Python",
+      "difficulty": "Beginner",
+      "duration_days": 3,
+      "points": 100,
+      "badge": "🐍 Python Starter",
+      "tasks": [
+        "Write a FizzBuzz program",
+        "Build a calculator",
+        "Create a number guessing game",
+        "Write a palindrome checker",
+        "Build a simple to-do list in terminal"
+      ],
+      "resources": ["https://python.org/doc/", "https://hackerrank.com/domains/python"]
+    },
+    {
+      "id": "ch002",
+      "title": "SQL Master Sprint",
+      "description": "Solve 15 SQL challenges from basic to intermediate in 3 days",
+      "skill": "SQL",
+      "difficulty": "Intermediate",
+      "duration_days": 3,
+      "points": 150,
+      "badge": "🗄️ SQL Slayer",
+      "tasks": [
+        "Write 5 SELECT queries with JOINs",
+        "Group and aggregate data",
+        "Write subqueries",
+        "Optimize a slow query",
+        "Complete 10 HackerRank SQL challenges"
+      ],
+      "resources": ["https://sqlzoo.net", "https://hackerrank.com/domains/sql"]
+    },
+    {
+      "id": "ch003",
+      "title": "React Speed Build",
+      "description": "Build a full React app with hooks and API integration in 5 days",
+      "skill": "React",
+      "difficulty": "Intermediate",
+      "duration_days": 5,
+      "points": 250,
+      "badge": "⚛️ React Ranger",
+      "tasks": [
+        "Set up React project with Vite",
+        "Build 3 reusable components",
+        "Implement useState and useEffect",
+        "Fetch data from a public API",
+        "Deploy to Vercel or Netlify"
+      ],
+      "resources": ["https://react.dev", "https://vite.dev"]
+    },
+    {
+      "id": "ch004",
+      "title": "ML Model from Scratch",
+      "description": "Train your first ML model on a real dataset in 7 days",
+      "skill": "Machine Learning",
+      "difficulty": "Intermediate",
+      "duration_days": 7,
+      "points": 350,
+      "badge": "🤖 ML Pioneer",
+      "tasks": [
+        "Download a Kaggle dataset",
+        "Perform EDA with Pandas/Matplotlib",
+        "Engineer features",
+        "Train a classification model",
+        "Evaluate with precision/recall/F1",
+        "Push notebook to GitHub"
+      ],
+      "resources": ["https://kaggle.com/learn", "https://scikit-learn.org"]
+    },
+    {
+      "id": "ch005",
+      "title": "Docker Containerize Everything",
+      "description": "Containerize 3 different apps using Docker in 3 days",
+      "skill": "Docker",
+      "difficulty": "Intermediate",
+      "duration_days": 3,
+      "points": 200,
+      "badge": "🐳 Docker Captain",
+      "tasks": [
+        "Write a Dockerfile for a Node.js app",
+        "Write a Dockerfile for a Python Flask app",
+        "Create a docker-compose.yml with 3 services",
+        "Push images to Docker Hub"
+      ],
+      "resources": ["https://docs.docker.com", "https://labs.play-with-docker.com"]
+    },
+    {
+      "id": "ch006",
+      "title": "LeetCode 7-Day Grind",
+      "description": "Solve 1 Easy + 1 Medium LeetCode problem per day for 7 days",
+      "skill": "DSA",
+      "difficulty": "Intermediate",
+      "duration_days": 7,
+      "points": 400,
+      "badge": "💡 Algorithm Ace",
+      "tasks": [
+        "Day 1: Two Sum + Valid Parentheses",
+        "Day 2: Best Time to Buy Stock + Merge Intervals",
+        "Day 3: Maximum Subarray + Jump Game",
+        "Day 4: Reverse Linked List + LRU Cache",
+        "Day 5: Invert Binary Tree + Number of Islands",
+        "Day 6: Coin Change + Word Break",
+        "Day 7: Merge K Sorted Lists + Longest Palindrome"
+      ],
+      "resources": ["https://leetcode.com", "https://neetcode.io"]
+    },
+    {
+      "id": "ch007",
+      "title": "System Design Bootcamp",
+      "description": "Design and document 3 systems over 5 days",
+      "skill": "System Design",
+      "difficulty": "Advanced",
+      "duration_days": 5,
+      "points": 500,
+      "badge": "🏗️ Architecture Guru",
+      "tasks": [
+        "Design a URL shortener (bit.ly clone)",
+        "Design a social media feed",
+        "Design a notification system",
+        "Draw architecture diagrams",
+        "Document tradeoffs and decisions"
+      ],
+      "resources": ["https://github.com/donnemartin/system-design-primer", "https://educative.io"]
+    }
+  ],
+  "badges": [
+    {"id": "b001", "name": "First Analysis",   "icon": "🔍", "description": "Run your first skill analysis",          "points": 50},
+    {"id": "b002", "name": "Week Warrior",      "icon": "🔥", "description": "Maintain a 7-day study streak",           "points": 100},
+    {"id": "b003", "name": "Skill Collector",   "icon": "⭐", "description": "Add 10+ skills to your profile",          "points": 75},
+    {"id": "b004", "name": "Challenge Champion", "icon": "🏆", "description": "Complete 3 weekly challenges",            "points": 300},
+    {"id": "b005", "name": "Community Star",    "icon": "🌟", "description": "Help 5 other students",                  "points": 200},
+    {"id": "b006", "name": "Interview Ready",   "icon": "💼", "description": "Score 80%+ in interview readiness",      "points": 150},
+    {"id": "b007", "name": "Certificate Master","icon": "📜", "description": "Upload 3 verified certificates",          "points": 100},
+    {"id": "b008", "name": "Top Learner",       "icon": "🎓", "description": "Reach top 10% on the leaderboard",       "points": 500}
+  ]
+}

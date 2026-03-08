@@ -1,0 +1,56 @@
+{
+  "JavaScript": [
+    {"title": "JavaScript: The Complete Guide 2024", "platform": "Udemy", "instructor": "Maximilian Schwarzmüller", "url": "https://udemy.com/course/javascript-the-complete-guide-2020-beginner-advanced/", "type": "course", "free": false, "rating": 4.8, "duration": "52h", "youtube_id": "W6NZfCO5SIk"},
+    {"title": "JavaScript Crash Course For Beginners", "platform": "YouTube/Traversy Media", "url": "https://youtube.com/watch?v=hdI2bqOjy3c", "type": "video", "free": true, "rating": 4.9, "duration": "1.5h", "youtube_id": "hdI2bqOjy3c"},
+    {"title": "JavaScript30 – 30 Day Challenge", "platform": "Wesbos", "url": "https://javascript30.com", "type": "project", "free": true, "rating": 4.9, "duration": "30 days"},
+    {"title": "Eloquent JavaScript (Book)", "platform": "eloquentjavascript.net", "url": "https://eloquentjavascript.net", "type": "book", "free": true, "rating": 4.7, "duration": "Self-paced"}
+  ],
+  "Python": [
+    {"title": "Complete Python Bootcamp: Zero to Hero", "platform": "Udemy", "instructor": "Jose Portilla", "url": "https://udemy.com/course/complete-python-bootcamp/", "type": "course", "free": false, "rating": 4.7, "duration": "30h", "youtube_id": "rfscVS0vtbw"},
+    {"title": "Python for Everybody Specialization", "platform": "Coursera", "instructor": "Dr. Chuck", "url": "https://coursera.org/specializations/python", "type": "course", "free": false, "rating": 4.8, "duration": "8 weeks"},
+    {"title": "Python Tutorial – Full Course for Beginners", "platform": "YouTube/freeCodeCamp", "url": "https://youtube.com/watch?v=rfscVS0vtbw", "type": "video", "free": true, "rating": 4.9, "duration": "4.5h", "youtube_id": "rfscVS0vtbw"},
+    {"title": "Automate the Boring Stuff with Python", "platform": "automatetheboringstuff.com", "url": "https://automatetheboringstuff.com", "type": "book", "free": true, "rating": 4.8, "duration": "Self-paced"}
+  ],
+  "React": [
+    {"title": "React – The Complete Guide 2024", "platform": "Udemy", "instructor": "Maximilian Schwarzmüller", "url": "https://udemy.com/course/react-the-complete-guide-incl-redux/", "type": "course", "free": false, "rating": 4.7, "duration": "48h"},
+    {"title": "React Full Course for Beginners", "platform": "YouTube/Dave Gray", "url": "https://youtube.com/watch?v=RVFAyFWO4go", "type": "video", "free": true, "rating": 4.8, "duration": "9h", "youtube_id": "RVFAyFWO4go"},
+    {"title": "Official React Docs (react.dev)", "platform": "react.dev", "url": "https://react.dev", "type": "docs", "free": true, "rating": 5.0, "duration": "Self-paced"}
+  ],
+  "Machine Learning": [
+    {"title": "Machine Learning Specialization (Andrew Ng)", "platform": "Coursera", "instructor": "Andrew Ng", "url": "https://coursera.org/specializations/machine-learning-introduction", "type": "course", "free": false, "rating": 4.9, "duration": "3 months"},
+    {"title": "Machine Learning with Python", "platform": "YouTube/freeCodeCamp", "url": "https://youtube.com/watch?v=i_LwzRVP7bg", "type": "video", "free": true, "rating": 4.8, "duration": "6h", "youtube_id": "i_LwzRVP7bg"},
+    {"title": "Kaggle ML Courses (Free)", "platform": "Kaggle", "url": "https://kaggle.com/learn", "type": "course", "free": true, "rating": 4.8, "duration": "Self-paced"},
+    {"title": "Hands-On ML (Aurélien Géron)", "platform": "O'Reilly", "url": "https://oreilly.com", "type": "book", "free": false, "rating": 4.9, "duration": "Self-paced"}
+  ],
+  "Node.js": [
+    {"title": "Node.js – The Complete Guide (MVC, REST, GraphQL)", "platform": "Udemy", "url": "https://udemy.com/course/nodejs-the-complete-guide/", "type": "course", "free": false, "rating": 4.7, "duration": "40h"},
+    {"title": "Node.js Crash Course", "platform": "YouTube/Traversy Media", "url": "https://youtube.com/watch?v=fBNz5xF-Kx4", "type": "video", "free": true, "rating": 4.8, "duration": "1.5h", "youtube_id": "fBNz5xF-Kx4"}
+  ],
+  "Docker": [
+    {"title": "Docker & Kubernetes: The Practical Guide", "platform": "Udemy", "url": "https://udemy.com/course/docker-kubernetes-the-practical-guide/", "type": "course", "free": false, "rating": 4.7, "duration": "23h"},
+    {"title": "Docker Tutorial for Beginners", "platform": "YouTube/TechWorld with Nana", "url": "https://youtube.com/watch?v=3c-iBn73dDE", "type": "video", "free": true, "rating": 4.9, "duration": "3h", "youtube_id": "3c-iBn73dDE"}
+  ],
+  "AWS": [
+    {"title": "AWS Certified Solutions Architect", "platform": "A Cloud Guru", "url": "https://acloudguru.com", "type": "course", "free": false, "rating": 4.8, "duration": "40h"},
+    {"title": "AWS Free Tier Hands-On Labs", "platform": "AWS", "url": "https://aws.amazon.com/free", "type": "labs", "free": true, "rating": 4.7, "duration": "Ongoing"}
+  ],
+  "SQL": [
+    {"title": "The Complete SQL Bootcamp", "platform": "Udemy", "url": "https://udemy.com/course/the-complete-sql-bootcamp/", "type": "course", "free": false, "rating": 4.7, "duration": "22h"},
+    {"title": "SQL Tutorial – Full Database Course", "platform": "YouTube/freeCodeCamp", "url": "https://youtube.com/watch?v=HXV3zeQKqGY", "type": "video", "free": true, "rating": 4.9, "duration": "4h", "youtube_id": "HXV3zeQKqGY"},
+    {"title": "SQLZoo Interactive SQL", "platform": "sqlzoo.net", "url": "https://sqlzoo.net", "type": "interactive", "free": true, "rating": 4.6, "duration": "Self-paced"}
+  ],
+  "DSA": [
+    {"title": "JavaScript Algorithms & Data Structures Masterclass", "platform": "Udemy", "url": "https://udemy.com/course/js-algorithms-and-data-structures-masterclass/", "type": "course", "free": false, "rating": 4.8, "duration": "60h"},
+    {"title": "NeetCode 150 Roadmap", "platform": "neetcode.io", "url": "https://neetcode.io", "type": "practice", "free": true, "rating": 4.9, "duration": "Self-paced"},
+    {"title": "LeetCode Top Interview 150", "platform": "LeetCode", "url": "https://leetcode.com/studyplan/top-interview-150/", "type": "practice", "free": true, "rating": 4.9, "duration": "3 months"}
+  ],
+  "System Design": [
+    {"title": "System Design Interview Vol 1 & 2", "platform": "Amazon Books", "url": "https://amazon.com", "type": "book", "free": false, "rating": 4.9, "duration": "4 weeks"},
+    {"title": "System Design Primer (GitHub)", "platform": "GitHub/donnemartin", "url": "https://github.com/donnemartin/system-design-primer", "type": "resource", "free": true, "rating": 5.0, "duration": "Self-paced"},
+    {"title": "Grokking System Design Interview", "platform": "Educative", "url": "https://educative.io", "type": "course", "free": false, "rating": 4.8, "duration": "6 weeks"}
+  ],
+  "TensorFlow": [
+    {"title": "TensorFlow Developer Certificate", "platform": "Coursera/deeplearning.ai", "url": "https://coursera.org/professional-certificates/tensorflow-in-practice", "type": "course", "free": false, "rating": 4.7, "duration": "16 weeks"},
+    {"title": "TensorFlow 2.0 Complete Course", "platform": "YouTube/freeCodeCamp", "url": "https://youtube.com/watch?v=tPYj3fFJGjk", "type": "video", "free": true, "rating": 4.8, "duration": "6.5h", "youtube_id": "tPYj3fFJGjk"}
+  ]
+}
