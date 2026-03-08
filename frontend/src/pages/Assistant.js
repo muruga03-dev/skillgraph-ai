@@ -56,32 +56,43 @@ export default function Assistant() {
     setMessages(newMessages);
     setLoading(true);
 
-    try {
-      const response = await fetch("/api/ai/chat", {
+     try {
+
+    const response = await fetch(
+      "https://skillgraph-backend.onrender.com/api/ai/chat",
+      {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
           system: SYSTEM_PROMPT,
-          messages: newMessages,
-        }),
-      });
+          messages: newMessages
+        })
+      }
+    );
 
-      const data = await response.json();
-
-      if (!data.success) throw new Error(data.message);
-
-      setMessages((prev) => [
-        ...prev,
-        { role: "assistant", content: data.reply },
-      ]);
-    } catch (e) {
-      setError("⚠️ AI error: " + e.message);
-    } finally {
-      setLoading(false);
+    // Check response status
+    if (!response.ok) {
+      const errText = await response.text();
+      throw new Error(`Server error: ${errText}`);
     }
-  };
+
+    const data = await response.json();
+
+    return data;
+
+  } catch (error) {
+
+    console.error("AI request failed:", error);
+
+    return {
+      error: true,
+      message: "⚠️ AI request failed. Please try again."
+    };
+
+  }
+};
 
   const formatMsg = (text) => {
     return text.split("\n").map((line, i) => {
