@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { authAPI } from "../services/api";
 
 /* ─── Animated particle canvas background ─────────────────────────────────── */
 function ParticleCanvas() {
